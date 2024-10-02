@@ -8,10 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="org.example.models.User, org.example.models.enumerations.UserType, org.example.services.UserService" %>
 <%@ page import="java.util.List" %>
-<%
-    UserService userService = new UserService();
-    List<User> users = userService.findAllUsers();
-%>
+
 
 <h2>User List</h2>
 <table border="1">
@@ -25,22 +22,7 @@
     </tr>
     </thead>
     <tbody>
-    <%
-        for (User user : users) {
-    %>
-    <tr>
-        <td><%= user.getId() %></td>
-        <td><%= user.getName() %></td>
-        <td><%= user.getEmail() %></td>
-        <td><%= user.getType() %></td>
-        <td>
-            <a href="editUser.jsp?id=<%= user.getId() %>">Edit</a> |
-            <a href="deleteUser?id=<%= user.getId() %>">Delete</a>
-        </td>
-    </tr>
-    <%
-        }
-    %>
+
     </tbody>
 </table>
 
@@ -57,13 +39,7 @@
 
     <label for="type">User Type:</label>
     <select id="type" name="type">
-        <%
-            for (UserType type : UserType.values()) {
-        %>
-        <option value="<%= type %>"><%= type %></option>
-        <%
-            }
-        %>
+
     </select><br><br>
 
     <button type="submit">Add User</button>

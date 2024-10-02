@@ -12,11 +12,26 @@ import org.example.services.UserService;
 
 import java.io.IOException;
 
-@WebServlet("/login")
+
+@WebServlet(name = "LoginServlet", urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet {
-    private UserService userService = new UserService();
+  //  private UserService userService = new UserService();
 
     @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException
+    {
+        request.getRequestDispatcher("pages/auth/login.jsp").forward(request, response);
+    }
+    /*@Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.sendRedirect("pages/auth/login.jsp");
+    }*/
+
+
+
+   /* @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String email = request.getParameter("email");
@@ -38,5 +53,5 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("errorMessage", "Invalid email or password");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
-    }
+    }*/
 }

@@ -13,7 +13,7 @@
 <%
     // Set attributes for layout
     request.setAttribute("pageTitle", "Register");
-    request.setAttribute("pageContent", "registerContent.jsp");
+    request.setAttribute("pageContent", "/pagesContent/auth/registerContent.jsp");
 %>
 
 <jsp:include page="../../layouts/layout.jsp" />

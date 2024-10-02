@@ -8,15 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="org.example.models.User, org.example.models.enumerations.UserType, org.example.services.UserService" %>
 <%@ page import="java.util.List" %>
+
 <%
-    UserService userService = new UserService();
-    List<User> users = userService.findAllUsers();
-    String pageTitle = "Manage Users";
-    String pageContent = "managerContent.jsp"; // This will contain the specific content for managing users
+    // Set attributes for layout
+    request.setAttribute("pageTitle", "anage Users");
+    request.setAttribute("pageContent", "/pagesContent/manager/managerContent.jsp");
 %>
 
-<jsp:include page="../../layouts/layout.jsp">
-    <jsp:param name="pageTitle" value="<%= pageTitle %>" />
-    <jsp:param name="pageContent" value="<%= pageContent %>" />
-</jsp:include>
+<jsp:include page="../../layouts/layout.jsp" />
+
 

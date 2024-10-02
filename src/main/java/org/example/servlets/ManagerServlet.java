@@ -8,12 +8,13 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
+@WebServlet(name = "ManagerServlet", urlPatterns = {"/manager"})
+public class ManagerServlet extends HttpServlet {
 
-@WebServlet(name = "HomeServlet", urlPatterns = {"/"})
-public class HomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("pages/home.jsp").forward(request, response);
+        // Forward the request to the manager.jsp page
+        request.getRequestDispatcher("pages/manager/manager.jsp").forward(request, response);
     }
 }

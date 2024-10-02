@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>${pageTitle}</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Add your stylesheets here -->
+    <link rel="stylesheet" href="styles.css">
     <style>
         /* Basic Reset */
         body, h1, h2, p, ul {
@@ -80,13 +80,13 @@
     <h1>My Application</h1>
     <nav>
         <ul>
-            <li><a href="home.jsp">Home</a></li>
-            <li><a href="register.jsp">Register</a></li>
-            <li><a href="login.jsp">Login</a></li>
-            <li><a href="profile.jsp">Profile</a></li>
-            <li><a href="logout">Logout</a></li>
+            <li><a href="${pageContext.request.contextPath}/">Home</a></li>
+            <li><a href="${pageContext.request.contextPath}/manager">Manager</a></li>
+            <li><a href="${pageContext.request.contextPath}/login">Login</a></li>
+            <li><a href="${pageContext.request.contextPath}/register">Register</a></li>
         </ul>
     </nav>
+
 </header>
 
 <!-- Main Content -->

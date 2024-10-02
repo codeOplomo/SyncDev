@@ -13,7 +13,7 @@
 <%
     // Set attributes for layout
     request.setAttribute("pageTitle", "Home");
-    request.setAttribute("pageContent", "../pagesContent/homeContent.jsp");
+    request.setAttribute("pageContent", "/pagesContent/homeContent.jsp");
 %>
 
 <jsp:include page="../layouts/layout.jsp" />
